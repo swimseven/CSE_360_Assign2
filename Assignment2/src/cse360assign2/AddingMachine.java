@@ -17,6 +17,7 @@ public class AddingMachine {
 	 */
 	public AddingMachine () {
 		total = 0;  // not needed - included for clarity
+		history = "0";
 	}
 	
 	/**
@@ -25,7 +26,7 @@ public class AddingMachine {
 	 * @return the total stored in the AddingMachine object
 	 */
 	public int getTotal () {
-		return 0;
+		return total;
 	}
 	
 	/**
@@ -35,7 +36,8 @@ public class AddingMachine {
 	 * @param value
 	 */
 	public void add (int value) {
-		
+		total += value;
+		history += " + " + value;
 	}
 	
 	/**
@@ -45,7 +47,8 @@ public class AddingMachine {
 	 * @param value
 	 */
 	public void subtract (int value) {
-		
+		total -= value;
+		history += " - " + value;
 	}
 	
 	/**
@@ -55,13 +58,14 @@ public class AddingMachine {
 	 * @return a string containing a history of what was done to the object
 	 */
 	public String toString () {
-		return "";
+		return history;
 	}
 
 	/**
 	 * Method that resets the total to zero and clears the history
 	 */
 	public void clear() {
-	
+		total = 0;
+		history = "0";
 	}
 }
